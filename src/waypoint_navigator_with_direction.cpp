@@ -250,9 +250,10 @@ void WaypointNav::run_wp(){
         else{
           ROS_ERROR_STREAM("Function " + current_waypoint_->function + " Is Not Found.");
         }
+      } else {
+        ros::spinOnce();
+        rate_.sleep();
       }
-      ros::spinOnce();
-      rate_.sleep();
     }
     if(loop_flg_){
       ROS_INFO("Start waypoint_nav again!");
@@ -427,7 +428,7 @@ void WaypointNav::reset(){
   run();
 }
 void WaypointNav::run_go(){
-int resend_num = 0;
+  int resend_num = 0;
   int i;
   send_wp();
   while((resend_num < resend_thresh_) && ros::ok()){
