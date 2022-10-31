@@ -130,7 +130,7 @@ WaypointNav::WaypointNav() : nh_(),
   timer_ = nh_.createTimer(ros::Duration(0.1), &WaypointNav::timerCallback, this);
   reset_pub = nh_.advertise<std_msgs::Bool>("reset_pose", 1);
   cmd_data_pub = nh_.advertise<std_msgs::Int8MultiArray>("cmd_dir", 1);
-  cmd_data.data.resize(3);
+  cmd_data.data.resize(4);
 }
 
 bool WaypointNav::read_yaml()
