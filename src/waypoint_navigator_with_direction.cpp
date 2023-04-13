@@ -84,9 +84,9 @@ private:
   std::vector<std::string> cmd_list = {"go_straight", "turn_right", "turn_left"};
   std::vector<std::vector<int>> list_data = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
   int list[3][3] = {
-      {100, 0, 0},
-      {0, 100, 0},
-      {0, 0, 100},
+      {1, 0, 0},
+      {0, 1, 0},
+      {0, 0, 1},
   };
 };
 
